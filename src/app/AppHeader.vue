@@ -1,8 +1,10 @@
 <template>
   <div class="app-sidebar">
-    <NButton @click="toggleTheme">
-      sakdjflkasjklfdj
-    </NButton>
+    <div class="container">
+      <NButton @click="toggleTheme">
+        sakdjflkasjklfdj
+      </NButton>
+    </div>
   </div>
 </template>
 
@@ -30,14 +32,10 @@ function setTheme (theme) {
 
 <style lang='scss'>
 .app-sidebar {
-  position: fixed;
-  left: -28vw;
-  top: 0;
-  height: 100%;
-  max-width: 30vw;
   width: 100%;
+  padding: 12px 24px;
   transition: all .2s ease-in-out;
-  background: var(--clr-primary-bg-secondary);
+  background: var(--clr-bg-secondary);
   z-index: 1000;
 
   &:hover {

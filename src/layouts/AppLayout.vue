@@ -1,6 +1,6 @@
 <template>
   <div class="app-layout">
-    <AppSidebar />
+    <AppHeader />
     <div class="container">
       <slot />
     </div>
@@ -9,7 +9,7 @@
 
 <script lang="ts" setup>
 
-import AppSidebar from '@/app/AppSidebar.vue'
+import AppHeader from '@/app/AppHeader.vue'
 
 interface IProps {
 }
@@ -22,10 +22,20 @@ const props = defineProps<IProps>()
 .app-layout {
   width: 100dvw;
   height: 100dvh;
+  display: flex;
+  overflow-x: hidden;
+  flex-direction: column;
 }
 
 .container {
   max-width: 1140px;
+  width: 100%;
   margin: 0 auto;
+}
+
+@media screen and (max-width: 1140px) {
+  .container {
+    margin-left: 3vw;
+  }
 }
 </style>

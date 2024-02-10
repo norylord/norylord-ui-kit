@@ -1,0 +1,58 @@
+@import url('@/assets/fonts/fonts.scss');
+
+:root {
+  $active-theme: $light-theme;
+
+  @each $color, $shade in $active-theme {
+    @each $prop, $value in $shade {
+      --clr-#{$color}-#{$prop}: #{$value};
+    }
+  }
+}
+
+html[data-theme='dark'] {
+  @each $color, $shade in $dark-theme {
+    @each $prop, $value in $shade {
+      --clr-#{$color}-#{$prop}: #{$value};
+    }
+  }
+}
+
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  transition: color .2s linear;
+  transition: background .2s linear;
+  font-family: 'Open Sans', sans-serif;
+}
+
+body {
+  background: var(--clr-primary-bg);
+}
+
+
+.page-title {
+  font-size: 40px;
+  color: var(--clr-primary-page-title)
+}
+
+.page-subtitle {
+  font-size: 32px;
+  font-weight: 400;
+  color: var(--clr-primary-page-title)
+}
+
+.page-section {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 12px;
+}
+
+.page-subsection {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
