@@ -11,6 +11,13 @@ export default defineConfig({
       '@': fileURLToPath(new URL('./src', import.meta.url)),
       '~': fileURLToPath(new URL('./modules', import.meta.url))
     },
-    extensions: ['.js', '.json', '.jsx', '.mjs', '.ts', '.tsx', '.vue']
+    extensions: ['.js', '.json', '.jsx', '.mjs', '.ts', '.tsx', '.vue', '.scss']
+  },
+  css: {
+    preprocessorOptions: {
+      scss: {
+        additionalData: '@import "@/assets/variables/_colors.scss";'
+      }
+    }
   }
 })

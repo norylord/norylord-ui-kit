@@ -1,25 +1,25 @@
 module.exports = {
   env: {
     browser: true,
-    es2021: true
+    es2021: true,
   },
   extends: [
     'standard-with-typescript',
     'plugin:vue/vue3-essential',
     'plugin:vue/vue3-recommended',
     'plugin:vue/vue3-strongly-recommended',
-    'plugin:vue/strongly-recommended'
+    'plugin:vue/strongly-recommended',
   ],
   overrides: [
     {
       env: {
-        node: true
+        node: true,
       },
-      files: ['.eslintrc.{js,cjs}', '*.js', '*.vue', '*.ts'],
+      files: [ '.eslintrc.{js,cjs}', '*.js', '*.vue', '*.ts' ],
       parserOptions: {
-        sourceType: 'script'
-      }
-    }
+        sourceType: 'script',
+      },
+    },
   ],
   parser: 'vue-eslint-parser',
   parserOptions: {
@@ -27,10 +27,11 @@ module.exports = {
     parser: '@typescript-eslint/parser',
     sourceType: 'module',
     createDefaultProgram: true,
-    project: ['./tsconfig.json', './tsconfig.node.json'],
-    extraFileExtensions: ['.vue']
+    // project: ['./tsconfig.json', './tsconfig.node.json'],
+    extraFileExtensions: [ '.vue' ],
+    tsconfigRootDir: __dirname,
   },
-  plugins: ['vue'],
+  plugins: [ 'vue' ],
   rules: {
     'vue/order-in-components': [
       'error',
@@ -40,7 +41,7 @@ module.exports = {
           'directives',
           'components',
           'mixins',
-          ['provide', 'inject'],
+          [ 'provide', 'inject' ],
           'model',
           'props',
           'filters',
@@ -49,19 +50,19 @@ module.exports = {
           'watch',
           'methods',
           'LIFECYCLE_HOOKS',
-          'ROUTER_GUARDS'
-        ]
-      }
+          'ROUTER_GUARDS',
+        ],
+      },
     ],
-    'vue/v-for-delimiter-style': ['error', 'of'],
-    'vue/next-tick-style': ['error', 'promise'],
+    'vue/v-for-delimiter-style': [ 'error', 'of' ],
+    'vue/next-tick-style': [ 'error', 'promise' ],
     'vue/require-prop-types': 'error',
-    'vue/prop-name-casing': ['error', 'camelCase'],
-    'vue/component-name-in-template-casing': ['error', 'PascalCase'],
-    'vue/component-definition-name-casing': ['error', 'PascalCase'],
+    'vue/prop-name-casing': [ 'error', 'camelCase' ],
+    'vue/component-name-in-template-casing': [ 'error', 'PascalCase' ],
+    'vue/component-definition-name-casing': [ 'error', 'PascalCase' ],
     'vue/no-duplicate-attr-inheritance': 'error',
-    'vue/this-in-template': ['error', 'never'],
-    'vue/v-on-style': ['error', 'shorthand'],
+    'vue/this-in-template': [ 'error', 'never' ],
+    'vue/v-on-style': [ 'error', 'shorthand' ],
     'vue/no-multi-spaces': 'error',
     'no-useless-catch': 0,
     'no-useless-escape': 0,
@@ -82,38 +83,38 @@ module.exports = {
     'vue/component-tags-order': [
       'error',
       {
-        order: ['template', 'script', 'style']
-      }
+        order: [ 'template', 'script', 'style' ],
+      },
     ],
-    'vue/v-on-event-hyphenation': ['warn', 'always'],
+    'vue/v-on-event-hyphenation': [ 'warn', 'always' ],
     'vue/no-v-model-argument': 'warn',
     'vue/v-bind-style': 'error',
     'vue/attribute-hyphenation': 'warn',
-    'vue/v-slot-style': ['error', 'shorthand'],
+    'vue/v-slot-style': [ 'error', 'shorthand' ],
     'vue/no-unused-properties': [
       'warn',
       {
-        groups: ['props', 'data', 'computed', 'methods', 'setup'],
-        ignorePublicMembers: true
-      }
+        groups: [ 'props', 'data', 'computed', 'methods', 'setup' ],
+        ignorePublicMembers: true,
+      },
     ],
     'vue/max-attributes-per-line': [
       'error',
       {
         singleline: {
-          max: 1
+          max: 1,
         },
         multiline: {
-          max: 1
-        }
-      }
+          max: 1,
+        },
+      },
     ],
     'vue/first-attribute-linebreak': [
       'error',
       {
         singleline: 'ignore',
-        multiline: 'below'
-      }
-    ]
-  }
+        multiline: 'below',
+      },
+    ],
+  },
 }

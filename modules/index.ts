@@ -1,5 +1,5 @@
-type TModule = {
-  routes: any[],
+interface TModule {
+  routes: any[]
   store: any
 }
 
